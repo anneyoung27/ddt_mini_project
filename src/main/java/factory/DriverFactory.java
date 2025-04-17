@@ -21,7 +21,7 @@ import java.util.Properties;
 import static helper.PropertiesHelper.loadFile;
 
 public class DriverFactory {
-    public static WebDriver driver;
+    public static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     public static Properties setUp = loadFile();
     public static WebDriverWait wait;
 
@@ -29,6 +29,17 @@ public class DriverFactory {
 
     public static Logger log = LogManager.getLogger(DriverFactory.class);
 
+    private DriverFactory(){
+        // to prevent external instantiation of this class
+    }
+
+    public static WebDriver getDriver(){
+        return driver.get();
+    }
+
+    /**
+     * driverSetup() method is called to setup driver
+     */
     public static void driverSetUp() {
         if (driver == null) {
             try {
@@ -45,11 +56,11 @@ public class DriverFactory {
                 setUp.setProperty("BROWSER", browser);
                 initializeDriver();
 
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(setUp.getProperty("IMPLICIT_WAIT"))));
-                driver.manage().window().maximize();
-                driver.get(setUp.getProperty("URL"));
+                getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(Integer.parseInt(setUp.getProperty("IMPLICIT_WAIT"))));
+                getDriver().manage().window().maximize();
+                getDriver().get(setUp.getProperty("URL"));
 
-                wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(setUp.getProperty("EXPLICIT_WAIT"))));
+                wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Integer.parseInt(setUp.getProperty("EXPLICIT_WAIT"))));
             } catch (RuntimeException e) {
                 log.error("Error during driver setup: ", e);
                 throw new RuntimeException("Driver setup failed!", e);
@@ -57,6 +68,9 @@ public class DriverFactory {
         }
     }
 
+    /**
+     * initializeDriver() method is called to setup the browser driver
+     */
     private static void initializeDriver() {
         try{
             switch (setUp.getProperty("BROWSER").toLowerCase()) {
@@ -104,12 +118,23 @@ public class DriverFactory {
     }
 
 
+    /**
+     * tearDown() method is called after every test. It closes the browser
+     */
     public static void tearDown(){
-        if (driver != null){
-            driver.quit();
-            driver = null;
+        if (getDriver() != null){
+            //getDriver().quit();
+            getDriver().manage().deleteAllCookies();
+            getDriver().close();
         }
         log.info("Driver closed");
+    }
+
+    /**
+     * terminate() method is called after every class. It removes the ThreadLocal driver.
+     */
+    public static void terminate(){
+        driver.remove();
     }
 
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="D:/CodeProject/Java/MyProject/DataDrivenProject/DDT_Framework_2/SeleniumDataDrivenFramework/src/test/java/testCases/LoginTest.java">
+        <classes>
+            <class name="testCases.LoginTest">
+                <methods>
+                    <include name="testLoginValidInput"/>
+                    <include name="testLoginInvalidInput"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
