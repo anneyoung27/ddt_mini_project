@@ -19,15 +19,15 @@ public class WebUI extends DriverFactory {
     public static Logger log = LogManager.getLogger(WebUI.class);
 
     public static WebElement getWebElement(By by){
-        return driver.findElement(by);
+        return DriverFactory.getDriver().findElement(by);
     }
 
     public static List<WebElement> getWebElements(By by){
-        return driver.findElements(by);
+        return DriverFactory.getDriver().findElements(by);
     }
 
     public static void openURL(String url){
-        driver.get(url);
+        getDriver(url);
         double STEP_TIME = 0;
         threadSleep(STEP_TIME);
         log.info("Open URL: {}", url);

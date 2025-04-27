@@ -38,10 +38,10 @@ public class DriverFactory {
     }
 
     /**
-     * driverSetup() method is called to setup driver
+     * driverSetup() method is called to set up driver
      */
     public static void driverSetUp() {
-        if (driver == null) {
+        if (getDriver() == null) {
             try {
                 if (setUp.isEmpty()) {
                     log.warn("Failed to load config.properties, using empty properties");
@@ -69,26 +69,30 @@ public class DriverFactory {
     }
 
     /**
-     * initializeDriver() method is called to setup the browser driver
+     * initializeDriver() method is called to set up the browser driver
      */
     private static void initializeDriver() {
         try{
             switch (setUp.getProperty("BROWSER").toLowerCase()) {
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                    driver.set(new FirefoxDriver());
                     break;
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver.set(new ChromeDriver());
                     break;
                 case "chrome-headless":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver(new ChromeOptions().addArguments("--headless=new"));
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.addArguments("--headless=new");
+                    driver.set(new ChromeDriver(chromeOptions));
                     break;
                 case "firefox-headless":
                     WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver(new FirefoxOptions().addArguments("-headless"));
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.addArguments("-headless");
+                    driver.set(new FirefoxDriver(firefoxOptions));
                     break;
                 case "edge":
                     if (setUp.getProperty("PLATFORM_NAME").toLowerCase().contains("mac")){
@@ -96,7 +100,7 @@ public class DriverFactory {
                         throw new WebDriverException("Your operating system does not support the requested browser!");
                     } else {
                         WebDriverManager.edgedriver().setup();
-                        driver = new EdgeDriver();
+                        driver.set(new EdgeDriver());
                     }
                     break;
                 case "safari":
@@ -105,7 +109,7 @@ public class DriverFactory {
                         throw new WebDriverException("Your operating system does not support the requested browser!");
                     } else {
                         WebDriverManager.safaridriver().setup();
-                        driver = new SafariDriver();
+                        driver.set(new SafariDriver());
                     }
                     break;
                 default:

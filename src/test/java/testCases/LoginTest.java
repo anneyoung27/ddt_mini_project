@@ -10,7 +10,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginValidInput(){
-        LoginPage loginPage_1 = new LoginPage(DriverFactory.driver);
+        LoginPage loginPage_1 = new LoginPage(DriverFactory.getDriver());
 
         loginPage_1.openLoginPage();
 
@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testLoginInvalidInput(){
-        LoginPage loginPage_2 = new LoginPage(DriverFactory.driver);
+        LoginPage loginPage_2 = new LoginPage(DriverFactory.getDriver());
 
         loginPage_2.openLoginPage();
 

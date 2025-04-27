@@ -14,7 +14,7 @@ public class LoginTestWithJSONTest extends BaseTest {
 
     @Test(dataProvider = "userData")
     public void testLoginWithJson(String u_name, String pwd){
-        LoginPage loginPage_1 = new LoginPage(DriverFactory.driver);
+        LoginPage loginPage_1 = new LoginPage(DriverFactory.getDriver());
 
         loginPage_1.openLoginPage();
 
