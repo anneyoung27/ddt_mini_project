@@ -1,0 +1,22 @@
+[INFO] 17-04-2025 01:48:01 [main] [DriverFactory] - config.properties file has been loaded successfully
+[INFO] 17-04-2025 01:48:05 [main] [DriverFactory] - chrome browser has been selected
+[WARN] 17-04-2025 01:48:06 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
+[INFO] 17-04-2025 01:48:07 [main] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
+[WARN] 17-04-2025 01:48:07 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
+[INFO] 17-04-2025 01:48:07 [main] [WebUI] - Set text: selenium@qa on element By.xpath: //input[@name='userName']
+[WARN] 17-04-2025 01:48:07 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
+[INFO] 17-04-2025 01:48:07 [main] [WebUI] - Set text: qa@12345 on element By.xpath: //input[@name='password']
+[WARN] 17-04-2025 01:48:07 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
+[INFO] 17-04-2025 01:48:09 [main] [WebUI] - Click element: By.xpath: //input[@name='submit']
+[INFO] 17-04-2025 01:48:09 [main] [DriverFactory] - Driver closed
+[INFO] 17-04-2025 01:48:09 [main] [DriverFactory] - config.properties file has been loaded successfully
+[INFO] 17-04-2025 01:48:09 [main] [DriverFactory] - chrome browser has been selected
+[WARN] 17-04-2025 01:48:13 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
+[INFO] 17-04-2025 01:48:13 [main] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
+[WARN] 17-04-2025 01:48:13 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
+[INFO] 17-04-2025 01:48:13 [main] [WebUI] - Set text: selenium on element By.xpath: //input[@name='userName']
+[WARN] 17-04-2025 01:48:13 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
+[INFO] 17-04-2025 01:48:13 [main] [WebUI] - Set text: qa@123 on element By.xpath: //input[@name='password']
+[WARN] 17-04-2025 01:48:13 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
+[INFO] 17-04-2025 01:48:15 [main] [WebUI] - Click element: By.xpath: //input[@name='submit']
+[INFO] 17-04-2025 01:48:15 [main] [DriverFactory] - Driver closed

@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class WebUI extends DriverFactory {
+public class WebUI  {
 
     public static Logger log = LogManager.getLogger(WebUI.class);
 
@@ -27,7 +27,7 @@ public class WebUI extends DriverFactory {
     }
 
     public static void openURL(String url){
-        getDriver(url);
+        DriverFactory.getDriver().get(url);
         double STEP_TIME = 0;
         threadSleep(STEP_TIME);
         log.info("Open URL: {}", url);
@@ -65,7 +65,7 @@ public class WebUI extends DriverFactory {
     }
 
     public static boolean isDisplayed(By by){
-        boolean checkDisplay = driver.findElement(by).isDisplayed();
+        boolean checkDisplay = DriverFactory.getDriver().findElement(by).isDisplayed();
         log.info("Check element display {} \n=========> {}", by, checkDisplay);
         return checkDisplay;
     }
@@ -73,7 +73,7 @@ public class WebUI extends DriverFactory {
     // SYNCHRONIZATION
     public static void waitForElementVisible(By by){
         try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(System.getProperty("EXPLICIT_WAIT"))));
+            WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(Integer.parseInt(System.getProperty("EXPLICIT_WAIT"))));
             wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         } catch (Throwable error) {
             log.warn("Timeout waiting for the element visible. {}", by.toString());
@@ -94,14 +94,14 @@ public class WebUI extends DriverFactory {
             log.warn("EXPLICIT_WAIT system property is not set. Using default: " + waitTimeInSeconds + " seconds");
         }
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(waitTimeInSeconds));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(waitTimeInSeconds));
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 
         ExpectedCondition<Boolean> jsLoad = webDriver ->
                 js.executeScript("return document.readyState").toString().equals("complete");
 
         try {
-            if (!jsLoad.apply(driver)) {
+            if (!jsLoad.apply(DriverFactory.getDriver())) {
                 log.info("Waiting for JavaScript to be ready...");
                 wait.until(jsLoad);
             }
@@ -112,7 +112,7 @@ public class WebUI extends DriverFactory {
 
     public static void waitForElementPresent(By by){
         try{
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(System.getProperty("TIMEOUT"))));
+            WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(Integer.parseInt(System.getProperty("TIMEOUT"))));
             wait.until(ExpectedConditions.presenceOfElementLocated(by));
         }catch (Throwable error){
             log.warn("Element not exists : {}", by.toString());
@@ -121,7 +121,7 @@ public class WebUI extends DriverFactory {
 
     public static void waitForElementToBeClicked(By by){
         try{
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Integer.parseInt(System.getProperty("TIMEOUT"))));
+            WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(Integer.parseInt(System.getProperty("TIMEOUT"))));
             wait.until(ExpectedConditions.elementToBeClickable(by));
         }catch (Throwable error){
             log.warn("Timeout waiting for the element ready to click: {}", by.toString());
@@ -137,12 +137,12 @@ public class WebUI extends DriverFactory {
     }
 
     public static void scrollToElement(By element){
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
         js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", getWebElement(element));
     }
 
     public static void closeAlert(){
-        Alert alert = driver.switchTo().alert();
+        Alert alert = DriverFactory.getDriver().switchTo().alert();
         alert.accept();
     }
 }
