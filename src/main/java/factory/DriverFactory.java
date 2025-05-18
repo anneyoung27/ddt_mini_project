@@ -130,6 +130,7 @@ public class DriverFactory {
             //getDriver().quit();
             getDriver().manage().deleteAllCookies();
             getDriver().close();
+            terminate();
         }
         log.info("Driver closed");
     }
