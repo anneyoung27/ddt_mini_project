@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import pages.LoginPage;
 import testHook.BaseTest;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 
@@ -27,11 +29,17 @@ public class LoginTestWithExcelTest extends BaseTest {
     }
 
     @DataProvider
-    public Object[][] userData() throws FilloException {
+    public Object[][] userData() throws FilloException{
+
+        String filePath = System.getProperty("user.dir") + "/src/test/java/resources/testdata.xlsx";
+        File file = new File(filePath);
+
+        String directoryPath = file.getParent();
+        String fileName = file.getName();
+
         ExcelHelper excelHelper = new ExcelHelper();
-        List<HashMap<String, String>> users = excelHelper.getAllData(System.getProperty("user.dir") + "\\src\\test\\java\\resources\\",
-                "testdata.xlsx",
-                "TestData");
+        List<HashMap<String, String>> users = excelHelper.getAllData(directoryPath, fileName, "TestData");
+
         Object[][] dataObj = new Object[users.size()][2];
 
         for (int i = 0; i < users.size(); i++){

@@ -1,46 +1,22 @@
-[INFO] 27-04-2025 17:53:45 [main] [DriverFactory] - config.properties file has been loaded successfully
-[INFO] 27-04-2025 17:53:49 [main] [DriverFactory] - chrome browser has been selected
-[WARN] 27-04-2025 17:53:51 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[INFO] 27-04-2025 17:53:52 [main] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
-[WARN] 27-04-2025 17:53:52 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
-[INFO] 27-04-2025 17:53:52 [main] [WebUI] - Set text: selenium on element By.xpath: //input[@name='userName']
-[WARN] 27-04-2025 17:53:52 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
-[INFO] 27-04-2025 17:53:52 [main] [WebUI] - Set text: qa@123 on element By.xpath: //input[@name='password']
-[WARN] 27-04-2025 17:53:52 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 17:53:53 [main] [WebUI] - Click element: By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 17:53:53 [main] [DriverFactory] - Driver closed
-[WARN] 27-04-2025 17:53:53 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[INFO] 27-04-2025 18:04:05 [main] [DriverFactory] - config.properties file has been loaded successfully
-[INFO] 27-04-2025 18:04:06 [main] [DriverFactory] - chrome browser has been selected
-[WARN] 27-04-2025 18:04:08 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[INFO] 27-04-2025 18:04:09 [main] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
-[WARN] 27-04-2025 18:04:09 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
-[INFO] 27-04-2025 18:04:09 [main] [WebUI] - Set text: selenium@qa on element By.xpath: //input[@name='userName']
-[WARN] 27-04-2025 18:04:09 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
-[INFO] 27-04-2025 18:04:09 [main] [WebUI] - Set text: qa@12345 on element By.xpath: //input[@name='password']
-[WARN] 27-04-2025 18:04:09 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:04:10 [main] [WebUI] - Click element: By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:04:11 [main] [DriverFactory] - Driver closed
-[WARN] 27-04-2025 18:04:11 [main] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[INFO] 27-04-2025 18:06:16 [TestNG-test-Parallel Test-2] [DriverFactory] - config.properties file has been loaded successfully
-[INFO] 27-04-2025 18:06:16 [TestNG-test-Parallel Test-1] [DriverFactory] - config.properties file has been loaded successfully
-[INFO] 27-04-2025 18:06:17 [TestNG-test-Parallel Test-2] [DriverFactory] - chrome browser has been selected
-[INFO] 27-04-2025 18:06:17 [TestNG-test-Parallel Test-1] [DriverFactory] - chrome browser has been selected
-[WARN] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[WARN] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
-[INFO] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
-[WARN] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
-[INFO] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Set text: selenium@qa on element By.xpath: //input[@name='userName']
-[WARN] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
-[INFO] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Set text: qa@12345 on element By.xpath: //input[@name='password']
-[WARN] 27-04-2025 18:06:19 [TestNG-test-Parallel Test-2] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
-[WARN] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
-[INFO] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Set text: selenium on element By.xpath: //input[@name='userName']
-[WARN] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
-[INFO] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Set text: qa@123 on element By.xpath: //input[@name='password']
-[WARN] 27-04-2025 18:06:20 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:06:21 [TestNG-test-Parallel Test-2] [WebUI] - Click element: By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:06:21 [TestNG-test-Parallel Test-2] [DriverFactory] - Driver closed
-[INFO] 27-04-2025 18:06:21 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //input[@name='submit']
-[INFO] 27-04-2025 18:06:21 [TestNG-test-Parallel Test-1] [DriverFactory] - Driver closed
+[INFO] 25-05-2025 09:30:03 [TestNG-test-Parallel Test-1] [DriverFactory] - config.properties file has been loaded successfully
+[INFO] 25-05-2025 09:30:04 [TestNG-test-Parallel Test-1] [DriverFactory] - chrome browser has been selected
+[WARN] 25-05-2025 09:30:06 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
+[INFO] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
+[WARN] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
+[INFO] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Set text: selenium@qa on element By.xpath: //input[@name='userName']
+[WARN] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
+[INFO] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Set text: qa@12345 on element By.xpath: //input[@name='password']
+[WARN] 25-05-2025 09:30:07 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
+[INFO] 25-05-2025 09:30:08 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //input[@name='submit']
+[INFO] 25-05-2025 09:30:08 [TestNG-test-Parallel Test-1] [DriverFactory] - Driver closed
+[INFO] 25-05-2025 09:30:08 [TestNG-test-Parallel Test-1] [DriverFactory] - config.properties file has been loaded successfully
+[INFO] 25-05-2025 09:30:09 [TestNG-test-Parallel Test-1] [DriverFactory] - chrome browser has been selected
+[WARN] 25-05-2025 09:30:10 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //a[normalize-space()='SIGN-ON']
+[INFO] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //a[normalize-space()='SIGN-ON']
+[WARN] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='userName']
+[INFO] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Set text: selenium on element By.xpath: //input[@name='userName']
+[WARN] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='password']
+[INFO] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Set text: qa@123 on element By.xpath: //input[@name='password']
+[WARN] 25-05-2025 09:30:11 [TestNG-test-Parallel Test-1] [WebUI] - Timeout waiting for the element visible. By.xpath: //input[@name='submit']
+[INFO] 25-05-2025 09:30:12 [TestNG-test-Parallel Test-1] [WebUI] - Click element: By.xpath: //input[@name='submit']
+[INFO] 25-05-2025 09:30:12 [TestNG-test-Parallel Test-1] [DriverFactory] - Driver closed

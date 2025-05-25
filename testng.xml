@@ -3,7 +3,7 @@
 <suite name="All Test Suite" thread-count="2" parallel="methods">
     <test name="Parallel Test">
         <classes>
-            <class name="testCases.LoginTest"/>
+            <class name="testCases.LoginTestWithExcelTest"/>
         </classes>
     </test>
 </suite>

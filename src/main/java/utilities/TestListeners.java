@@ -63,10 +63,6 @@ public class TestListeners implements ITestListener {
         Report.log(Status.SKIP, " Test Skipped " + result.getThrowable(), result.getName());
     }
 
-    @Override
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
-    }
 
     @Override
     public void onFinish(ITestContext context) {

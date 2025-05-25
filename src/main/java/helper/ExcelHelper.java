@@ -5,6 +5,8 @@ import com.codoid.products.fillo.Connection;
 import com.codoid.products.fillo.Fillo;
 import com.codoid.products.fillo.Recordset;
 
+import java.io.File;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,7 +28,12 @@ public class ExcelHelper {
     public List<HashMap<String, String>> getAllData(String filepath, String excelName, String sheetName)
             throws FilloException {
         Fillo fillo = new Fillo();
-        filePath_1 = filepath + excelName;
+        filePath_1 = Paths.get(filepath, excelName).toString();
+
+        File file = new File(filePath_1);
+        if (!file.exists()) {
+            throw new RuntimeException("Excel file not found: " + filePath_1);
+        }
         List<HashMap<String, String>> recordList = new ArrayList<>();
 
         Connection connection = fillo.getConnection(filePath_1);
